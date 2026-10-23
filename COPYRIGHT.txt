@@ -1,0 +1,4 @@
+Copyright (c) 2026 ATS Resume. All rights reserved.
+
+This software, its source code, design and content are protected by copyright.
+No part may be copied, modified, distributed or reused without written permission from ATS Resume.

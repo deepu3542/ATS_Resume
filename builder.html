@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- Copyright (c) 2026 ATS Resume. All rights reserved. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a2b20" />
+  <title>Resume Builder | ATS Resume</title>
+  <meta name="description" content="Edit your resume with a live preview, check ATS readiness, match a job description and download a selectable-text PDF." />
+  <meta name="author" content="ATS Resume" />
+  <meta name="copyright" content="Copyright 2026 ATS Resume. All rights reserved." />
+  <meta property="og:title" content="Resume Builder | ATS Resume" />
+  <meta property="og:description" content="Edit your resume with a live preview, check ATS readiness, match a job description and download a selectable-text PDF." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script>document.documentElement.classList.add('js');setTimeout(function(){var p=document.getElementById('preloader');if(p)p.remove();document.body.classList.remove('is-loading');document.body.classList.add('loaded')},9000);</script>
+</head>
+<body class="page-builder">
+
+<div class="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="backdrop" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i></div>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="ATS Resume, home"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0a2b20"/><path d="M46 14C28 14 16 24 16 38c0 4 1 7 3 10 2-9 8-16 18-21-8 6-13 12-15 21 2 1 4 2 7 2 14 0 21-12 17-36z" fill="#5bd48f"/></svg><span>ATS Resume</span></a>
+  <nav id="site-nav" aria-label="Main">
+    <a class="navlink" href="index.html">Home</a><a class="navlink" href="builder.html" aria-current="page">Builder</a><a class="navlink" href="ats-checker.html">ATS Checker</a><a class="navlink" href="contact.html">Contact</a><a class="navlink" href="privacy.html">Privacy</a>
+    
+  </nav>
+  <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+</header>
+<main id="main" tabindex="-1">
+<div class="builder" id="view-builder" data-pane="edit">
+  <div class="builder-bar">
+    <p class="save-status" id="save-status" role="status"></p>
+    <div class="btn-row dl-row" style="margin:0"><button type="button" class="btn btn-quiet" id="download-docx"><span>Download Word</span></button><button type="button" class="btn btn-primary" id="download"><span id="download-label">Download PDF</span></button></div>
+  </div>
+  <div class="workspace">
+    <section class="pane pane-edit glass" aria-label="Edit resume">
+      <div class="editor">
+        <div class="tabs" id="tabs" role="tablist" aria-label="Resume sections"></div>
+        <div class="tab-panel" id="tab-panel" role="tabpanel"></div>
+      </div>
+    </section>
+    <section class="pane pane-preview" aria-label="Resume preview">
+      <fieldset class="templates" id="templates"><legend>Template</legend></fieldset>
+      <div class="preview-tools">
+        <div class="seg-mini" id="paper-seg" role="group" aria-label="Paper size"></div>
+        <p class="muted" id="pages" aria-live="polite"></p>
+      </div>
+      <div class="preview-stage"><div class="paper-fit" id="paper-fit"></div></div>
+    </section>
+    <section class="pane pane-score glass" aria-label="ATS readiness">
+      <h2 class="pane-title">ATS readiness</h2>
+      <div id="ats-body"></div>
+    </section>
+  </div>
+  <nav class="seg" id="seg" aria-label="Builder view"></nav>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" aria-label="ATS Resume, home"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0a2b20"/><path d="M46 14C28 14 16 24 16 38c0 4 1 7 3 10 2-9 8-16 18-21-8 6-13 12-15 21 2 1 4 2 7 2 14 0 21-12 17-36z" fill="#5bd48f"/></svg><span>ATS Resume</span></a>
+        <p>A free resume builder that runs in your browser. Your resume stays on your device.</p>
+      </div>
+      <div class="foot-col"><h2>Product</h2><a href="builder.html">Resume builder</a><a href="ats-checker.html">ATS checker</a><a href="index.html#templates">Templates</a><a href="index.html#faq">FAQ</a></div>
+      <div class="foot-col"><h2>Company</h2><a href="contact.html">Contact us</a><a href="privacy.html">Privacy policy</a></div>
+    </div>
+    <div class="foot-base"><span>&copy; <span data-year>2026</span> ATS Resume. All rights reserved.</span><span>Copyright protected. Unauthorized copying or reuse is prohibited.</span></div>
+  </div>
+</footer>
+<button type="button" class="to-top" aria-label="Back to top"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 15l6-6 6 6"/></svg></button>
+<div class="toasts" id="toasts" role="region" aria-label="Notifications"></div>
+<noscript><p style="position:fixed;bottom:0;left:0;right:0;padding:12px;background:#0a2b20;color:#fff;text-align:center">ATS Resume needs JavaScript for the resume builder.</p></noscript>
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="data.js"></script>
+<script src="logic.js"></script>
+<script src="ats.js"></script>
+<script src="atsview.js"></script>
+<script src="pdfwriter.js"></script>
+<script src="pdf.js"></script>
+<script src="docxwriter.js"></script>
+<script src="site.js"></script>
+<script src="builder.js"></script>
+<script>
+window.addEventListener('load',function(){
+  var okCss=getComputedStyle(document.documentElement).getPropertyValue('--forest').trim();
+  if(okCss&&window.ATS_BOOT)return;
+  var p=document.getElementById('preloader');if(p)p.remove();
+  document.body.classList.remove('is-loading');document.body.classList.add('loaded');
+  var d=document.createElement('div');d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:2000;padding:16px 18px;border-radius:14px;background:#0a2b20;color:#fff;font:16px/1.5 system-ui,sans-serif;box-shadow:0 20px 40px rgba(0,0,0,.4)';
+  d.innerHTML='<strong>Some site files did not load.</strong> '+(okCss?'':'The stylesheet files are missing. ')+(window.ATS_BOOT?'':'The script files are missing. ')+'Upload every file from the project (all .html, .css and .js files) into the same place as <code>index.html</code>, then reload.';
+  document.body.appendChild(d);
+});
+</script>
+</body>
+</html>

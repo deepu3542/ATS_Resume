@@ -1,0 +1,110 @@
+<!doctype html>
+<!-- Copyright (c) 2026 ATS Resume. All rights reserved. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a2b20" />
+  <title>ATS Checker | ATS Resume</title>
+  <meta name="description" content="Score your resume against a job description with a transparent 100-point ATS checklist: exact keywords, headings, formatting and content." />
+  <meta name="author" content="ATS Resume" />
+  <meta name="copyright" content="Copyright 2026 ATS Resume. All rights reserved." />
+  <meta property="og:title" content="ATS Checker | ATS Resume" />
+  <meta property="og:description" content="Score your resume against a job description with a transparent 100-point ATS checklist: exact keywords, headings, formatting and content." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script>document.documentElement.classList.add('js');setTimeout(function(){var p=document.getElementById('preloader');if(p)p.remove();document.body.classList.remove('is-loading');document.body.classList.add('loaded')},9000);</script>
+</head>
+<body class="page-ats">
+
+<div class="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="backdrop" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i></div>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="ATS Resume, home"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0a2b20"/><path d="M46 14C28 14 16 24 16 38c0 4 1 7 3 10 2-9 8-16 18-21-8 6-13 12-15 21 2 1 4 2 7 2 14 0 21-12 17-36z" fill="#5bd48f"/></svg><span>ATS Resume</span></a>
+  <nav id="site-nav" aria-label="Main">
+    <a class="navlink" href="index.html">Home</a><a class="navlink" href="builder.html">Builder</a><a class="navlink" href="ats-checker.html" aria-current="page">ATS Checker</a><a class="navlink" href="contact.html">Contact</a><a class="navlink" href="privacy.html">Privacy</a>
+    <a class="btn btn-primary nav-cta" href="builder.html">Build my resume</a>
+  </nav>
+  <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-hero" aria-labelledby="k-title"><div class="wrap">
+  <span class="eyebrow" style="opacity:0;animation:riseIn .8s forwards">ATS checker</span>
+  <h1 id="k-title" style="opacity:0;animation:riseIn .8s .1s forwards">Score your resume against a job post.</h1>
+  <p style="opacity:0;animation:riseIn .8s .2s forwards">Get a 100-point ATS score with every check shown. It compares your exact wording with the posting, so you know what to change before you apply.</p>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap checker">
+  <div class="glass form-card checker-input reveal reveal-left">
+    <h2>1. Your resume</h2>
+    <div class="opts" role="radiogroup" aria-label="Where is your resume?">
+      <label class="opt"><input type="radio" name="src" value="saved" />My saved resume</label>
+      <label class="opt"><input type="radio" name="src" value="paste" />Paste text</label>
+      <label class="opt"><input type="radio" name="src" value="upload" />Upload file</label>
+    </div>
+    <div id="src-saved"><div class="src-note" id="saved-note"></div></div>
+    <div id="src-paste" hidden><div class="field"><label for="c-text">Resume text</label><textarea id="c-text" rows="9" placeholder="Paste the full text of your resume, including section headings."></textarea></div></div>
+    <div id="src-upload" hidden>
+      <label class="drop" id="drop"><input id="c-file" type="file" accept=".docx,.txt,.md" /><strong>Choose a .docx or .txt file</strong><span>or drop it here. It is read in your browser and never uploaded.</span></label>
+      <p class="file-status" id="file-status" role="status"></p>
+      <p class="hint">PDFs cannot be read here. Copy the text from your PDF and use Paste text.</p>
+    </div>
+    <h2 class="step-h">2. The job</h2>
+    <div class="field"><label for="c-title">Job title (exactly as written in the posting)</label><input id="c-title" type="text" placeholder="e.g. Frontend Engineer" autocomplete="off" /></div>
+    <div class="field" style="margin-top:14px"><label for="c-jd">Job description</label><textarea id="c-jd" rows="9" placeholder="Paste the full job post. Without it, the 40 keyword points are skipped."></textarea></div>
+    <div class="btn-row"><button type="button" class="btn btn-primary btn-lg" id="run">Check my resume <span class="arrow"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><button type="button" class="btn btn-quiet" id="example">Load an example</button></div>
+  </div>
+  <div class="results" id="results" aria-live="polite">
+    <div class="glass placeholder-card reveal reveal-right"><h2>Your report appears here</h2><p>Choose your resume, paste a job post and press Check my resume. You will get a score out of 100, the fixes worth the most points, and an exact keyword table.</p></div>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0" aria-labelledby="m-title"><div class="wrap">
+  <div class="section-head reveal"><span class="eyebrow">How the score works</span><h2 id="m-title">100 points, no black box</h2><p>The score follows a best-practice ATS checklist. Real applicant tracking systems do not publish how they rank candidates, so no tool can compute an exact employer score. Treat this as a clear, repeatable guide to what to fix.</p></div>
+  <div class="table-wrap method reveal"><table><thead><tr><th scope="col">Category</th><th scope="col">Points</th><th scope="col">What is checked</th></tr></thead><tbody><tr><th scope="row">Keywords</th><td>40 pts</td><td>Exact phrases from the posting (17), 8 to 15 keywords matched (5), keywords spread across Summary, Skills and Work Experience (6), exact wording such as "Power BI" not "PowerBI" (3), acronym plus full term (3), no keyword stuffing (3), exact job title (3).</td></tr><tr><th scope="row">Formatting</th><td>20 pts</td><td>Single column with no tables, text boxes or graphics (5), standard section headings (6), standard font at 10 to 12 pt (3), contact details in the body (3), safe file type (3).</td></tr><tr><th scope="row">Content</th><td>40 pts</td><td>Name (1), email (3), phone (2), work experience (6), dates (2), education (5), skills (5), action verbs (5), quantified achievements (6), certifications spelled out (3), summary (1), length (1).</td></tr></tbody></table></div>
+  <p class="hint" style="margin-top:12px">Without a job description, keyword checks are skipped and the score covers the other 60 points scaled to 100. Checks that cannot be measured from pasted text (such as fonts) are left out instead of guessed.</p>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" aria-label="ATS Resume, home"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0a2b20"/><path d="M46 14C28 14 16 24 16 38c0 4 1 7 3 10 2-9 8-16 18-21-8 6-13 12-15 21 2 1 4 2 7 2 14 0 21-12 17-36z" fill="#5bd48f"/></svg><span>ATS Resume</span></a>
+        <p>A free resume builder that runs in your browser. Your resume stays on your device.</p>
+      </div>
+      <div class="foot-col"><h2>Product</h2><a href="builder.html">Resume builder</a><a href="ats-checker.html">ATS checker</a><a href="index.html#templates">Templates</a><a href="index.html#faq">FAQ</a></div>
+      <div class="foot-col"><h2>Company</h2><a href="contact.html">Contact us</a><a href="privacy.html">Privacy policy</a></div>
+    </div>
+    <div class="foot-base"><span>&copy; <span data-year>2026</span> ATS Resume. All rights reserved.</span><span>Copyright protected. Unauthorized copying or reuse is prohibited.</span></div>
+  </div>
+</footer>
+<button type="button" class="to-top" aria-label="Back to top"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 15l6-6 6 6"/></svg></button>
+<div class="toasts" id="toasts" role="region" aria-label="Notifications"></div>
+<noscript><p style="position:fixed;bottom:0;left:0;right:0;padding:12px;background:#0a2b20;color:#fff;text-align:center">ATS Resume needs JavaScript for the resume builder.</p></noscript>
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="data.js"></script>
+<script src="logic.js"></script>
+<script src="ats.js"></script>
+<script src="atsview.js"></script>
+<script src="docxparse.js"></script>
+<script src="site.js"></script>
+<script src="ats-checker.js"></script>
+<script>
+window.addEventListener('load',function(){
+  var okCss=getComputedStyle(document.documentElement).getPropertyValue('--forest').trim();
+  if(okCss&&window.ATS_BOOT)return;
+  var p=document.getElementById('preloader');if(p)p.remove();
+  document.body.classList.remove('is-loading');document.body.classList.add('loaded');
+  var d=document.createElement('div');d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:2000;padding:16px 18px;border-radius:14px;background:#0a2b20;color:#fff;font:16px/1.5 system-ui,sans-serif;box-shadow:0 20px 40px rgba(0,0,0,.4)';
+  d.innerHTML='<strong>Some site files did not load.</strong> '+(okCss?'':'The stylesheet files are missing. ')+(window.ATS_BOOT?'':'The script files are missing. ')+'Upload every file from the project (all .html, .css and .js files) into the same place as <code>index.html</code>, then reload.';
+  document.body.appendChild(d);
+});
+</script>
+</body>
+</html>
